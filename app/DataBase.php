@@ -20,6 +20,15 @@ class DataBase{
         $connection = new PDO('mysql:host='.self::HOST.';dbname='.self::DBNAME,self::USER,self::PASSWORD);
     }
     //metodo que insere dados no banco
+    public function execute($query, $values){
+        try{
+            echo "<pre>";
+            print_r($query);
+            echo "</pre>";
+        }catch(PDOException $e){
+            die('ERRO: '.$e);
+        }
+    }
     public function insert($array){
         //extrair as chaves do array
         $fields = array_keys($array);
@@ -34,11 +43,10 @@ class DataBase{
     }
 }
 $db = new DataBase('fornecedor');
-$fornecedor = [
+$db->insert([
     'nome'=>'Coca-cola',
     'cnpj'=>'6745765678687',
     'telefone'=>'756786',
     'email'=>'coca@gmail.com',
     'endereco'=>'Avenida JK'
-];
-$db->insert($fornecedor);
+]);
