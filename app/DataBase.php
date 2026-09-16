@@ -47,7 +47,7 @@ class DataBase{
         //extrair as chaves do array
         $fields = array_keys($array);
         //monta a query
-        $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields).' WHERE '.$where;
+        $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields).'=?  WHERE '.$where;
         //executa a query
         $this->execute($query, array_values($array));
         return true;  
@@ -67,9 +67,15 @@ class DataBase{
     }
     
 }
+/*
 $db = new DataBase('fornecedor');
-$db->delete('id=1');
+$db->update('id=3',[
+    'nome' => 'kkk',
+    'cnpj' => '123'
+]);
+//$db->delete('id=1');
 $f = $db->select(null,'cnpj desc',2,'nome, cnpj')->fetchAll(PDO::FETCH_CLASS);
 echo "<pre>";
 print_r($f);
 echo "</pre>";
+*/
