@@ -59,7 +59,7 @@ class DataBase{
         return true;
     }
     public function select($where=null,$order=null,$limit=null,$fields='*'){
-        $where = strlen($where) ? 'ORDER BY '.$where : '';
+        $where = strlen($where) ? 'WHERE '.$where : '';
         $order = strlen($order) ? 'ORDER BY '.$order : '';
         $limit = strlen($limit) ? 'LIMIT '.$limit : '';
         $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;

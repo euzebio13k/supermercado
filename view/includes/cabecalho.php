@@ -10,7 +10,7 @@
 <body>
     <header class="container-fluid bg-danger">
         <div class="container d-flex">
-            <img src="../images/logo.png" width="200px" height="150px">
-            <h1 class="m-auto text-white text-center">Lojas AmeriKanas</h1>
+            <!--<img src="../images/logo.png" width="200px" height="150px">-->
+            <h1 class="m-auto text-white text-center p-4">Lojas AmeriKanas</h1>
         </div>        
     </header>

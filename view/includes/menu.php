@@ -18,7 +18,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/supermercado/view/fornecedor/cadastrar.php">Cadastrar Fornecedor</a></li>
-            <li><a class="dropdown-item" href="/supermercado/view/fornecedor/listar.php">Listar Fornecedores</a></li>
+            <li><a class="dropdown-item" href="/supermercado/view/fornecedor/listar.php?msg=Bem vindo a pagina de fornecedores">Listar Fornecedores</a></li>
           </ul>
         </li>
         <li class="nav-item">
