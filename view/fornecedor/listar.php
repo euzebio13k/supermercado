@@ -36,7 +36,7 @@ use App\Fornecedor;
                     <td><?= $fornecedor->telefone ?></td>
                     <td><?= $fornecedor->email ?></td>
                     <td><?= $fornecedor->endereco ?></td>
-                    <td><a href=""><button class="btn btn-primary">Editar</button></a>
+                    <td><a href="alterar.php?id=<?= $fornecedor->id ?>"><button class="btn btn-primary">Editar</button></a>
                     <a href="/supermercado/action/action_fornecedor.php?action=excluir&id=<?= $fornecedor->id ?>">
                     <button onclick="return confirm('Deseja realmente excluir esse Fornecedor?')" class="btn btn-danger">Excluir</button></a</td>
                 </tr>

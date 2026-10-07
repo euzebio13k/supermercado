@@ -6,6 +6,9 @@ use App\Produto;
     include('../includes/rodape.php');
     $produtoes = Produto::listar(null,'nome asc');
     $msg = $_GET['msg'];
+    /*echo "<pre>";
+    print_r($produtoes);
+    echo "</pre>";*/
 ?>
 <main class="container">
 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -39,8 +42,8 @@ use App\Produto;
                     <td><?= $produto->quantidade ?></td>
                     <td><?= $produto->preco ?></td>
                     <td><?= $produto->data_validade ?></td>
-                    <td><?= $produto->fornecedor ?></td>
-                    <td><a href=""><button class="btn btn-primary">Editar</button></a>
+                    <td><?= $produto->fornecedor->nome ?></td>
+                    <td><a href="alterar.php?action=alterar&id=<?= $produto->id ?>"><button class="btn btn-primary">Editar</button></a>
                     <a href="/supermercado/action/action_produto.php?action=excluir&id=<?= $produto->id ?>">
                     <button onclick="return confirm('Deseja realmente excluir esse Produto?')" class="btn btn-danger">Excluir</button></a</td>
                 </tr>
