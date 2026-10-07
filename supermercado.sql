@@ -1,4 +1,3 @@
-drop database supermercado if exists;
 create database supermercado;
 use supermercado;
 create table fornecedor(
@@ -14,8 +13,8 @@ create table produto(
     nome varchar(50) not null,
     descricao varchar(255),
     codigo varchar(8) not null unique,
-    quantidade int not null,
-    preco decimal(7,2) default 0,
+    quantidade int default 0,
+    preco decimal(9,2) default 0,
     data_validade date not null,
     id_fornecedor int not null,
     foreign key (id_fornecedor) references fornecedor(id)
