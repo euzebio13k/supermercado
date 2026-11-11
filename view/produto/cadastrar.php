@@ -16,7 +16,7 @@ use App\Fornecedor;
         Quantidade: <input name="quantidade" type="number" class="form-control">
         Preço: <input name="preco" type="text" class="form-control">
         Data de validade: <input name="data_validade" type="date" class="form-control">
-        Fornecedor: <select class="form-select">
+        Fornecedor: <select name="fornecedor" class="form-select">
             <option>Selecione o Fornecedor ...</option>
             <?php foreach($fornecedores as $f){?>
                 <option value="<?= $f->id ?>"><?= $f->nome ?></option>

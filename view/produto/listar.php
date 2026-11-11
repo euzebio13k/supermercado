@@ -41,7 +41,7 @@ use App\Produto;
                     <td><?= $produto->codigo ?></td>
                     <td><?= $produto->quantidade ?></td>
                     <td><?= $produto->preco ?></td>
-                    <td><?= $produto->data_validade ?></td>
+                    <td><?= date('d/m/Y', strtotime($produto->data_validade))  ?></td>
                     <td><?= $produto->fornecedor->nome ?></td>
                     <td><a href="alterar.php?action=alterar&id=<?= $produto->id ?>"><button class="btn btn-primary">Editar</button></a>
                     <a href="/supermercado/action/action_produto.php?action=excluir&id=<?= $produto->id ?>">
@@ -49,7 +49,6 @@ use App\Produto;
                 </tr>
         <?php    }if (empty($produtoes)): ?>
                 <tr><td colspan="7" class="text-center py-4"><b>Nenhum Produto cadastrado.</b></td></tr>
-        <?php endif; ?>
-        
+        <?php endif; ?>        
     </table>
 </main>
