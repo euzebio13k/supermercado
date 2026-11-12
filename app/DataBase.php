@@ -4,7 +4,7 @@ use PDO;
 use PDOException;
 class DataBase{
     private const HOST = 'localhost';
-    private const USER = 'root';
+    private const USER = 'postgres';
     private const PASSWORD = '123';
     private const DB = 'supermercado';
     private $connection;
@@ -16,7 +16,7 @@ class DataBase{
     }
     //metodo que cria uma conexão com o banco de dados
     public function setConnection(){
-        $this->connection = new PDO('mysql:host='.self::HOST.';dbname='.self::DB,self::USER,self::PASSWORD);   
+        $this->connection = new PDO('pgsql:host='.self::HOST.';dbname='.self::DB,self::USER,self::PASSWORD);   
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     //metodo que insere dados no banco
