@@ -8,10 +8,11 @@ use App\Venda;
     use App\Login;
     Login::requireLogin();
     
-    $vendas = Venda::buscarPorId(2);
-    $msg = $_GET['msg'];
+    $venda = Venda::buscarPorId(2);
+    $vendas = Venda::listar();
     echo "<pre>";
     print_r($vendas);
+    print_r($venda);
     echo "</pre>";
     exit;
 ?>

@@ -4,7 +4,7 @@ use PDO;
 use DateTime;
 class Venda{
     public $id;
-    public $funcinario;
+    public $funcionario;
     public $cpf_cliente;
     public $produtos;
     public $valor_total;
@@ -33,7 +33,7 @@ class Venda{
     public static function listar($where = null, $order = null, $limit = null){
         $vendas = (new DataBase('venda'))->select($where,$order,$limit)->fetchAll(PDO::FETCH_CLASS, self::class);        
         foreach($vendas as $venda){
-            
+            $venda->funcionario = Funcionario::buscarPorId($venda->id_funcionario);
         }
         return $vendas; 
     }
@@ -43,6 +43,8 @@ class Venda{
         if (!$venda) {
             return null;
         }
+        //busca o funcionario que fez a venda pelo id
+        $venda->funcionario = Funcionario::buscarPorId($venda->id_funcionario);
         //Busca os produtos dessa venda
         $venda->produtos = self::buscarProdutosPorVenda($venda->id);
         $venda->valor_total = 0;
