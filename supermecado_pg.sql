@@ -37,8 +37,8 @@ create table venda(
     foreign key (id_funcionario) references funcionario(id)
 );
 create table venda_produto(
-    id serial primary key,
     id_produto int not null,
+    quantidade int not null,
     id_venda int not null,
     foreign key (id_produto) references produto(id),
     foreign key (id_venda) references venda(id)
