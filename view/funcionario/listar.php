@@ -4,6 +4,9 @@ use App\Funcionario;
     include('../includes/cabecalho.php');
     include('../includes/menu.php');
     include('../includes/rodape.php');
+    use App\Login;
+    Login::requireLogin();
+    
     $funcionarios = Funcionario::listar(null,'nome asc');
     $msg = $_GET['msg'];
 ?>

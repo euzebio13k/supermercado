@@ -3,6 +3,9 @@
     include('../includes/cabecalho.php');
     include('../includes/menu.php');
     include('../includes/rodape.php');
+    use App\Login;
+    Login::requireLogin();
+    
 ?>
 <main class="container mb-5 mt-3">
     <h1 class="text-center">Cadastrar Fornecedor</h1>

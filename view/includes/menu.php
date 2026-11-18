@@ -22,7 +22,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="/supermercado/logout.php">Sair</a>
         </li>
       </ul>
       <form class="d-flex" role="search">

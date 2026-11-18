@@ -5,6 +5,9 @@ use App\Fornecedor;
     include('../includes/cabecalho.php');
     include('../includes/menu.php');
     include('../includes/rodape.php');
+    use App\Login;
+    Login::requireLogin();
+    
     $fornecedores = Fornecedor::listar();
 ?>
 <main class="container mb-5 mt-3">

@@ -31,11 +31,9 @@ create table funcionario(
 );
 create table venda(
     id serial primary key,
-    id_produto int not null,
     id_funcionario int not null,
     cpf_cliente varchar(11),
     data_venda timestamp not null,
-    foreign key (id_produto) references produto(id),
     foreign key (id_funcionario) references funcionario(id)
 );
 create table venda_produto(

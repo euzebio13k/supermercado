@@ -4,6 +4,9 @@ use App\Fornecedor;
     include('../includes/cabecalho.php');
     include('../includes/menu.php');
     include('../includes/rodape.php');
+    use App\Login;
+    Login::requireLogin();
+    
     $fornecedores = Fornecedor::listar(null,'nome asc');
     $msg = $_GET['msg'];
 ?>

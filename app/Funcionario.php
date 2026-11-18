@@ -51,5 +51,9 @@ class Funcionario{
     public static function buscarPorId($id){
         return (new DataBase('funcionario'))->select('id='.$id)->fetchObject(self::class);
     }
+    public static function logar($cpf, $senha){
+        return (new DataBase('funcionario'))
+        ->select("cpf='".$cpf."' and senha='".$senha."'")->fetchObject(self::class);
+    }
     
 }

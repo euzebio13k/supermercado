@@ -4,6 +4,9 @@ use App\Produto;
     include('../includes/cabecalho.php');
     include('../includes/menu.php');
     include('../includes/rodape.php');
+    use App\Login;
+    Login::requireLogin();
+    
     $produtoes = Produto::listar(null,'nome asc');
     $msg = $_GET['msg'];
     /*echo "<pre>";
